@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import data from "./data";
 import Link from "next/link";
+import Product from "../components/Product";
 
 export default function Home() {
   return (
@@ -30,40 +31,7 @@ export default function Home() {
             <>
               {data.products.length === 0 && console.log("no hay productos")}
               {data.products.map((product) => {
-                return (
-                  <div key={product._id} className="card">
-                    <a href={`/product/${product._id}`}>
-                      <img
-                        className="medium"
-                        src={product.image}
-                        alt={product.name}
-                      />
-                    </a>
-                    <div className="card-body">
-                      <a href={`/product/${product._id}`}>
-                        <h2>{product.name}</h2>
-                      </a>
-                      <div className="rating">
-                        <span>
-                          <i className="fa fa-star"></i>
-                        </span>
-                        <span>
-                          <i className="fa fa-star"></i>
-                        </span>
-                        <span>
-                          <i className="fa fa-star"></i>
-                        </span>
-                        <span>
-                          <i className="fa fa-star"></i>
-                        </span>
-                        <span>
-                          <i className="fa fa-star"></i>
-                        </span>
-                      </div>
-                      <div className="price">${product.price}</div>
-                    </div>
-                  </div>
-                );
+                return <Product key={product._id} product={product}></Product>;
               })}
             </>
           </div>

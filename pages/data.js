@@ -7,7 +7,7 @@ const data = {
       image: "/images/skin1.jpg",
       price: 15,
       brand: "CEIQ",
-      rating: 4.5,
+      rating: 3.0,
       numReviews: 10,
       description: "Piel sintética docente",
     },
