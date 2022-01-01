@@ -31,6 +31,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
+  min-height: 100vh;
 }
 header {
   grid-area: header;
@@ -44,6 +45,8 @@ footer {
   grid-area: footer;
   background-color: #2b3c73;
   color: #ffffff;
+  position: sticky;
+  top: 100%;
 }
 
 /* clases comunes */
