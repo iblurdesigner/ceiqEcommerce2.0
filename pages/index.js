@@ -1,9 +1,8 @@
 import Head from "next/head";
 // import Image from 'next/image'
 import styles from "../styles/Home.module.css";
-import data from "./data";
+import HomeScreen from "./screens/HomeScreen";
 import Link from "next/link";
-import Product from "../components/Product";
 
 export default function Home() {
   return (
@@ -16,25 +15,16 @@ export default function Home() {
       </Head>
       <div className="grid-container">
         <header className="row">
-          <div>
-            <a href="/" className="brand">
-              CEIQ
-            </a>
+          <div className="brand">
+            <Link href="/">CEIQ</Link>
           </div>
           <div>
-            <a href="/cart">Carrito</a>
-            <a href="/signin">Ingresar</a>
+            <Link href="/cart">Carrito</Link>
+            <Link href="/signin">Ingresar</Link>
           </div>
         </header>
         <main>
-          <div className="row center">
-            <>
-              {data.products.length === 0 && console.log("no hay productos")}
-              {data.products.map((product) => {
-                return <Product key={product._id} product={product}></Product>;
-              })}
-            </>
-          </div>
+          <HomeScreen />
         </main>
         <footer className="row center">Todos los derechos reservados</footer>
       </div>
