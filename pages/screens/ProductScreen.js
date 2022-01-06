@@ -1,13 +1,19 @@
 import Link from "next/link";
 import data from "pages/data";
 import { useRouter } from "next/router";
+import useIsMounted from "hooks/useIsMounted";
 import Rating from "components/Rating";
 
 export default function ProductScreen(props) {
-  const ruta = useRouter();
+  const router = useRouter();
+  const isMounted = useIsMounted();
+
+  if (!isMounted) {
+    return null;
+  }
 
   const info = data;
-  const idPulsado = ruta.query._id;
+  const idPulsado = router.query._id;
   // const idProd = info.products[idPulsado]._id;
   // console.log(idProd === idPulsado);
 
@@ -16,6 +22,8 @@ export default function ProductScreen(props) {
   if (!product) {
     return <div>Producto no encontrado</div>;
   }
+
+  console.log({ router }, router.query._id);
   return (
     <div>
       <Link href="/">Regresar al inicio</Link>
