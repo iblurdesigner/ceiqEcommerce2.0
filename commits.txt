@@ -1,0 +1,35 @@
+commit f2aa2e2c1219f44dfb28dd120f4021f1022acc60
+Author: iblurdesigner <nevomen@gmail.com>
+Date:   Thu Jan 6 17:12:48 2022 -0500
+
+    useIs Mounted para el detalle de los productos
+
+commit 11813b037034f9d4d32cb9456edb64346634db82
+Author: iblurdesigner <nevomen@gmail.com>
+Date:   Sat Jan 1 18:05:29 2022 -0500
+
+    fix footer para abajo
+
+commit 4cc62fd2a33bf989c609649e5958dddb59c45ffc
+Author: iblurdesigner <nevomen@gmail.com>
+Date:   Fri Dec 31 23:23:58 2021 -0500
+
+    creacion de pagina de producto
+
+commit fc59f8cd9c73952b17327cddab4c3aedfcf7fcd9
+Author: iblurdesigner <nevomen@gmail.com>
+Date:   Thu Dec 30 15:42:35 2021 -0500
+
+    creacion de componentes para product y rating
+
+commit b91dd7aaba02f07458f2bc7cf1e5b2e9cf83901d
+Author: iblurdesigner <nevomen@gmail.com>
+Date:   Thu Dec 30 12:58:32 2021 -0500
+
+    Primer commit con nueva version de  Next 12
+
+commit e7d79f99f27c2dddabab43aa282bdab15613ebe9
+Author: iblurdesigner <nevomen@gmail.com>
+Date:   Thu Dec 30 10:20:39 2021 -0500
+
+    Initial commit from Create Next App

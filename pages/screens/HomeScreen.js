@@ -1,7 +1,7 @@
-import data from "../data";
+// import data from "../data";
 import Product from "components/Product";
 
-export default function HomeScreen() {
+export default function HomeScreen(data) {
   return (
     <div className="row center">
       <>
@@ -10,6 +10,7 @@ export default function HomeScreen() {
           return <Product key={product._id} product={product}></Product>;
         })}
       </>
+      {/* {console.log(data)} */}
     </div>
   );
 }
