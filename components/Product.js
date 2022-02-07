@@ -1,12 +1,19 @@
 import Rating from "./Rating";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Product(props) {
   const { product } = props;
   return (
     <div key={product._id} className="card">
       <Link href={`/screens/product/${product._id}`}>
-        <img className="medium" src={product.image} alt={product.name} />
+        <Image
+          className="medium"
+          src={product.image}
+          alt={product.name}
+          width={460}
+          height={360}
+        />
       </Link>
       <div className="card-body">
         <Link href={`/screens/product/${product._id}`}>
