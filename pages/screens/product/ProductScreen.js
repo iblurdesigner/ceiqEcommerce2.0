@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import useIsMounted from "hooks/useIsMounted";
@@ -6,12 +7,14 @@ import Rating from "components/Rating";
 export default function ProductScreen({ products }) {
   const router = useRouter();
   const isMounted = useIsMounted();
+  const [qty, setQty] = useState(1);
 
   if (!isMounted) {
     return null;
   }
-
+  // PARA SABER CUAL ES LA ID DEL PRODUCTO PULSADO
   const idPulsado = router.query._id;
+
   // const idProd = info.products[idPulsado]._id;
   // console.log(idProd === idPulsado);
 
@@ -19,6 +22,10 @@ export default function ProductScreen({ products }) {
 
   const product = products.find((x) => x._id === idPulsado);
   console.log(products);
+
+  const addToCartHandler = () => {
+    router.push(`/cartscreen/${idPulsado}?qty=${qty}`);
+  };
 
   return (
     <div>
@@ -60,9 +67,37 @@ export default function ProductScreen({ products }) {
                   </div>
                 </div>
               </li>
-              <li>
-                <button className="primary block">Añadir al carrito</button>
-              </li>
+              {product.countInStock > 0 && (
+                <>
+                  <li>
+                    <div className="row">
+                      <div>Cantidad</div>
+                      <div>
+                        <select
+                          value={qty}
+                          onChange={(e) => setQty(e.target.value)}
+                        >
+                          {[...Array(product.countInStock).keys()].map((x) => (
+                            <option key={x + 1} value={x + 1}>
+                              {" "}
+                              {x + 1}{" "}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <button
+                      onClick={addToCartHandler}
+                      className="primary block"
+                    >
+                      Añadir al carrito
+                    </button>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>
